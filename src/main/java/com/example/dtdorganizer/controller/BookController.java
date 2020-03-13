@@ -1,9 +1,7 @@
 package com.example.dtdorganizer.controller;
 
-import com.example.dtdorganizer.model.BookModel;
-import com.example.dtdorganizer.model.User;
+import com.example.dtdorganizer.model.Book;
 import com.example.dtdorganizer.service.BookService;
-import com.example.dtdorganizer.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,25 +18,25 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    //get users
+    //get book
     @GetMapping("/books")
-    public List<BookModel> getAllBooks(){
+    public List<Book> getAllBooks(){
         return this.bookService.getAllBooks();
     }
 
-    //get user by id
+    //get book by id
     @GetMapping("/books/{id}")
-    public Optional<BookModel> getBookById(@PathVariable String Id){
-        return this.bookService.getBookById(Id);
+    public Optional<Book> getBookById(@PathVariable String id){
+        return this.bookService.getBookById(id);
     }
-    //save user
+    //save book
     @PostMapping("/books")
-    public BookModel createBook(@RequestBody BookModel book){
+    public Book createBook(@RequestBody Book book){
         return this.bookService.createBook(book);
     }
     //update user
 
-    //delete user
+    //delete book
     @DeleteMapping("/book/{id}")
     public void deleteBook(@PathVariable String Id){
         this.bookService.deleteBook(Id);

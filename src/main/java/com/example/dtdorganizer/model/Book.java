@@ -1,16 +1,22 @@
 package com.example.dtdorganizer.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
 @Table(name="books")
-public class BookModel {
+public class Book {
     @Id
     public String isbn;
     public String title;
-    @Transient
-    public List<String> authors ;
+
+
+    @ElementCollection(targetClass=String.class)
+    @Column(name="authors")
+    private Collection<String> authors;
+
     public int pages;
     public String description;
     public String publisher;
@@ -19,10 +25,10 @@ public class BookModel {
     public String imagePath;
     public int Qty;
 
-    public BookModel() {
+    public Book() {
         super();
     }
-    public BookModel(String isbn,String title,List<String> authors,int pages,String description,String publisher,String publishedDate,float rating,String imagePath,int Qty) {
+    public Book(String  isbn, String title, Collection<String> authors, int pages, String description, String publisher, String publishedDate, float rating, String imagePath, int Qty) {
         this.isbn = isbn;
         this.title=title;
         this.authors=authors;
@@ -51,11 +57,11 @@ public class BookModel {
         this.title = title;
     }
 
-    public List<String> getAuthors() {
+    public Collection<String> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<String> authors) {
+    public void setAuthors(Collection<String> authors) {
         this.authors = authors;
     }
 

@@ -1,15 +1,14 @@
 package com.example.dtdorganizer.service;
 
-import com.example.dtdorganizer.model.BookModel;
-import com.example.dtdorganizer.model.User;
+import com.example.dtdorganizer.model.Book;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface BookService {
-    List<BookModel> getAllBooks();
-    Optional<BookModel> getBookById(String Id);
-    BookModel createBook(BookModel book);
-    BookModel updateBook(BookModel book);
-    void deleteBook(String id);
+    List<Book> getAllBooks();
+    Optional<Book> getBookById(String Id);
+    Book createBook(Book book);
+    Book updateBook(Book book);
+    void deleteBook(String Id);
 }

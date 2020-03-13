@@ -1,8 +1,7 @@
 package com.example.dtdorganizer.service.impl;
 
-import com.example.dtdorganizer.model.BookModel;
+import com.example.dtdorganizer.model.Book;
 import com.example.dtdorganizer.repository.BookRepository;
-import com.example.dtdorganizer.repository.UserRepository;
 import com.example.dtdorganizer.service.BookService;
 import org.springframework.stereotype.Service;
 
@@ -17,22 +16,22 @@ public class BookServiceImpl implements BookService {
         this.bookRepository = bookRepository;
     }
     @Override
-    public List<BookModel> getAllBooks() {
+    public List<Book> getAllBooks() {
         return this.bookRepository.findAll();
     }
 
     @Override
-    public Optional<BookModel> getBookById(String Id) {
+    public Optional<Book> getBookById(String Id) {
         return this.bookRepository.findById(Id);
     }
 
     @Override
-    public BookModel createBook(BookModel book) {
+    public Book createBook(Book book) {
         return this.bookRepository.save(book);
     }
 
     @Override
-    public BookModel updateBook(BookModel book) {
+    public Book updateBook(Book book) {
         return null;
     }
 
