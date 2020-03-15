@@ -23,7 +23,7 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
-    public Optional<Document> getCDocumentById(Long id) {
+    public Optional<Document> getDocumentById(Long id) {
         return  this.documentRepository.findById(id);
     }
 

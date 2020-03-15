@@ -29,7 +29,7 @@ public class DocumentController {
     //get Course by id
     @GetMapping("/documents/{id}")
     public Optional<Document> getCourseById(@PathVariable Long id){
-        return this.documentService.getCDocumentById(id);
+        return this.documentService.getDocumentById(id);
     }
     //save Course
     @PostMapping("/documents")
