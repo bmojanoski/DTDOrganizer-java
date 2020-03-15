@@ -34,7 +34,7 @@ public class BookController {
     public Book createBook(@RequestBody Book book){
         return this.bookService.createBook(book);
     }
-    //update user
+    //update book
 
     //delete book
     @DeleteMapping("/book/{id}")

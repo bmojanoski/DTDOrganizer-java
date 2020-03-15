@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class BookServiceImpl implements BookService {
 
@@ -15,6 +16,7 @@ public class BookServiceImpl implements BookService {
     public BookServiceImpl(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
+
     @Override
     public List<Book> getAllBooks() {
         return this.bookRepository.findAll();
