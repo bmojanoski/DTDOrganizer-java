@@ -1,0 +1,16 @@
+package com.example.dtdorganizer.service;
+
+import com.example.dtdorganizer.model.Request;
+import com.example.dtdorganizer.model.Resource;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface ResourceService {
+    List<Resource> getAllResources();
+    Optional<Resource> getResourcesById(Long id);
+    Resource createResource(Resource resource);
+    Resource updateResource(Resource resource);
+    void deleteResource(Long id);
+    void addRequest(Long id, Request request);
+}
