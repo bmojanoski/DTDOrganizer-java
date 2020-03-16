@@ -200,30 +200,30 @@ if [ -z "$BASE_DIR" ]; then
 fi
 
 ##########################################################################################
-# Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
-# This allows using the maven wrapper in projects that prohibit checking in binary data.
+# Extension to allow automatically downloading the maven-resourceDTO.jar from Maven-central
+# This allows using the maven resourceDTO in projects that prohibit checking in binary data.
 ##########################################################################################
-if [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then
+if [ -r "$BASE_DIR/.mvn/resourceDTO/maven-resourceDTO.jar" ]; then
     if [ "$MVNW_VERBOSE" = true ]; then
-      echo "Found .mvn/wrapper/maven-wrapper.jar"
+      echo "Found .mvn/resourceDTO/maven-resourceDTO.jar"
     fi
 else
     if [ "$MVNW_VERBOSE" = true ]; then
-      echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."
+      echo "Couldn't find .mvn/resourceDTO/maven-resourceDTO.jar, downloading it ..."
     fi
     if [ -n "$MVNW_REPOURL" ]; then
-      jarUrl="$MVNW_REPOURL/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
+      jarUrl="$MVNW_REPOURL/io/takari/maven-resourceDTO/0.5.6/maven-resourceDTO-0.5.6.jar"
     else
-      jarUrl="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
+      jarUrl="https://repo.maven.apache.org/maven2/io/takari/maven-resourceDTO/0.5.6/maven-resourceDTO-0.5.6.jar"
     fi
     while IFS="=" read key value; do
       case "$key" in (wrapperUrl) jarUrl="$value"; break ;;
       esac
-    done < "$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"
+    done < "$BASE_DIR/.mvn/resourceDTO/maven-resourceDTO.properties"
     if [ "$MVNW_VERBOSE" = true ]; then
       echo "Downloading from: $jarUrl"
     fi
-    wrapperJarPath="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"
+    wrapperJarPath="$BASE_DIR/.mvn/resourceDTO/maven-resourceDTO.jar"
     if $cygwin; then
       wrapperJarPath=`cygpath --path --windows "$wrapperJarPath"`
     fi
@@ -251,25 +251,25 @@ else
         if [ "$MVNW_VERBOSE" = true ]; then
           echo "Falling back to using Java to download"
         fi
-        javaClass="$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.java"
+        javaClass="$BASE_DIR/.mvn/resourceDTO/MavenWrapperDownloader.java"
         # For Cygwin, switch paths to Windows format before running javac
         if $cygwin; then
           javaClass=`cygpath --path --windows "$javaClass"`
         fi
         if [ -e "$javaClass" ]; then
-            if [ ! -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
+            if [ ! -e "$BASE_DIR/.mvn/resourceDTO/MavenWrapperDownloader.class" ]; then
                 if [ "$MVNW_VERBOSE" = true ]; then
                   echo " - Compiling MavenWrapperDownloader.java ..."
                 fi
                 # Compiling the Java class
                 ("$JAVA_HOME/bin/javac" "$javaClass")
             fi
-            if [ -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
+            if [ -e "$BASE_DIR/.mvn/resourceDTO/MavenWrapperDownloader.class" ]; then
                 # Running the downloader
                 if [ "$MVNW_VERBOSE" = true ]; then
                   echo " - Running MavenWrapperDownloader.java ..."
                 fi
-                ("$JAVA_HOME/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")
+                ("$JAVA_HOME/bin/java" -cp .mvn/resourceDTO MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")
             fi
         fi
     fi
@@ -301,10 +301,10 @@ fi
 MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"
 export MAVEN_CMD_LINE_ARGS
 
-WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+WRAPPER_LAUNCHER=org.apache.maven.resourceDTO.MavenWrapperMain
 
 exec "$JAVACMD" \
   $MAVEN_OPTS \
-  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
+  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/resourceDTO/maven-resourceDTO.jar" \
   "-Dmaven.home=${M2_HOME}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
