@@ -19,8 +19,6 @@ public class Resource {
 
     public String name;
 
-    public int qty;
-
     public String description;
 
     public String image;

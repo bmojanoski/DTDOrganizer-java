@@ -3,6 +3,7 @@ package com.example.dtdorganizer.service.impl;
 import com.example.dtdorganizer.exceptions.InvalidResourceIdException;
 import com.example.dtdorganizer.model.Request;
 import com.example.dtdorganizer.model.Resource;
+import com.example.dtdorganizer.model.ResourceType;
 import com.example.dtdorganizer.repository.RequestRepository;
 import com.example.dtdorganizer.repository.ResourceRepository;
 import com.example.dtdorganizer.service.ResourceService;
@@ -24,6 +25,22 @@ public class ResourceServiceImpl implements ResourceService {
     public List<Resource> getAllResources() {
         return this.resourceRepository.findAll();
     }
+
+    @Override
+    public List<Resource> getAllOffice() {
+        return this.resourceRepository.getAllByOffice();
+    }
+
+    @Override
+    public List<Resource> getAllWorkMaterials() {
+        return this.resourceRepository.getAllByWorkMaterials();
+    }
+
+    @Override
+    public List<Resource> getAllUtilities() {
+        return this.resourceRepository.getAllByUtilities();
+    }
+
 
     @Override
     public Optional<Resource> getResourcesById(Long id) {
