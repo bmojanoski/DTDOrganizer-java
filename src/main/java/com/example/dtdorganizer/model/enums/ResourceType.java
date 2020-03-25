@@ -1,4 +1,4 @@
-package com.example.dtdorganizer.model;
+package com.example.dtdorganizer.model.enums;
 
 import lombok.*;
 

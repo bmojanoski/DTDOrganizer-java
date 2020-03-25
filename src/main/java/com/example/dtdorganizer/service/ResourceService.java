@@ -2,7 +2,6 @@ package com.example.dtdorganizer.service;
 
 import com.example.dtdorganizer.model.Request;
 import com.example.dtdorganizer.model.Resource;
-import com.example.dtdorganizer.model.ResourceType;
 
 import java.util.List;
 import java.util.Optional;

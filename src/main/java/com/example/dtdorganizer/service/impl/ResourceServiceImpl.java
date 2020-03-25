@@ -3,8 +3,6 @@ package com.example.dtdorganizer.service.impl;
 import com.example.dtdorganizer.exceptions.InvalidResourceIdException;
 import com.example.dtdorganizer.model.Request;
 import com.example.dtdorganizer.model.Resource;
-import com.example.dtdorganizer.model.ResourceType;
-import com.example.dtdorganizer.repository.RequestRepository;
 import com.example.dtdorganizer.repository.ResourceRepository;
 import com.example.dtdorganizer.service.ResourceService;
 import org.springframework.stereotype.Service;

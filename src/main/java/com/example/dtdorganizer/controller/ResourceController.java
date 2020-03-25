@@ -3,10 +3,8 @@ package com.example.dtdorganizer.controller;
 import com.example.dtdorganizer.model.Request;
 import com.example.dtdorganizer.model.Resource;
 import com.example.dtdorganizer.model.ResourceDTO;
-import com.example.dtdorganizer.model.ResourceType;
 import com.example.dtdorganizer.service.RequestService;
 import com.example.dtdorganizer.service.ResourceService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

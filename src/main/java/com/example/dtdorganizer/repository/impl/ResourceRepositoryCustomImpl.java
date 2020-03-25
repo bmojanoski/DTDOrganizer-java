@@ -1,7 +1,6 @@
 package com.example.dtdorganizer.repository.impl;
 
 import com.example.dtdorganizer.model.Resource;
-import com.example.dtdorganizer.model.ResourceType;
 import com.example.dtdorganizer.repository.ResourceRepositoryCustom;
 import org.springframework.stereotype.Repository;
 
