@@ -36,7 +36,7 @@ public class CourseController {
     public Course createCourse(@RequestBody Course course){
         return this.courseService.createCourse(course);
     }
-    //update user
+    //update Course
 
     //delete Course
     @DeleteMapping("/courses/{id}")
