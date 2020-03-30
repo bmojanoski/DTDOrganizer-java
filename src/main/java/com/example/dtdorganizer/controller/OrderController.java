@@ -24,7 +24,7 @@ public class OrderController {
     //get orders
     @GetMapping("/orders")
     public List<Order> getAllOrders(){
-        return this.orderService.getAllOrders();
+        return this.orderService.getAllFromToday();
     }
 
     //get orders by date

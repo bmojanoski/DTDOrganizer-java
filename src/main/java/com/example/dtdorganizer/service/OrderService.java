@@ -11,4 +11,5 @@ public interface OrderService {
     Order createOrder(Order order);
     Order updateOrder(Order order);
     void deleteOrder(Long id);
+    List<Order> getAllFromToday();
 }

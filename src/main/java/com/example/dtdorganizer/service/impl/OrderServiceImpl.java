@@ -40,4 +40,9 @@ public class OrderServiceImpl implements OrderService {
     public void deleteOrder(Long id) {
         this.orderRepository.deleteById(id);
     }
+
+    @Override
+    public List<Order> getAllFromToday() {
+        return this.orderRepository.getAllFromToday();
+    }
 }

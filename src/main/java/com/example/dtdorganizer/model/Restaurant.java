@@ -3,6 +3,7 @@ package com.example.dtdorganizer.model;
 
 import com.example.dtdorganizer.model.enums.PriceRange;
 import com.example.dtdorganizer.model.enums.ResourceType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class Restaurant {
 
     public String image;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "restaurant")
     private List<Order> orderList;
 

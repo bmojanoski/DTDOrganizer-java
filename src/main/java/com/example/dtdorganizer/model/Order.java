@@ -1,6 +1,7 @@
 package com.example.dtdorganizer.model;
 
 import com.example.dtdorganizer.model.enums.PriceRange;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class Order {
 
     public int price;
 
-    public String Description;
+    public String description;
 
     public String date;
 
@@ -30,6 +31,7 @@ public class Order {
     @JoinColumn(name="restaurant_id", nullable = false)
     private Restaurant restaurant;
 
+    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(
             name = "order_food",
