@@ -31,7 +31,7 @@ public class Order {
     @JoinColumn(name="restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-    @JsonIgnore
+    
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinTable(
             name = "order_food",
