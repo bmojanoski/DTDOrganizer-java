@@ -14,20 +14,20 @@ import java.util.List;
 @Data
 public class Food {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     String name;
-    String description;
     int price;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "foods", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Order> orders;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "foods", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Restaurant> restaurants;
+    //This implementation will be used in the next feature
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "foods", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private List<Restaurant> restaurants;
 
 
 }

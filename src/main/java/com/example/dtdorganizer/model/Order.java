@@ -19,8 +19,6 @@ public class Order {
     @GeneratedValue(strategy= GenerationType.AUTO)
     Long id;
 
-    public String name;
-
     public int price;
 
     public String description;

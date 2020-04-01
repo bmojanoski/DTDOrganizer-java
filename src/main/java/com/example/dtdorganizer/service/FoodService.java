@@ -9,7 +9,9 @@ import java.util.Optional;
 public interface FoodService {
     List<Food> getAllFoods();
     Optional<Food> getFoodById(Long id);
+    Optional<Food> findByNameAndPrice(String name, int price);
     Food createFood(Food order);
     Food updateFood(Food order);
     void deleteFood(Long id);
+
 }

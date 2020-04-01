@@ -18,7 +18,7 @@ import java.util.List;
 @Data
 public class Restaurant {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     public String name;
@@ -31,11 +31,12 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant")
     private List<Order> orderList;
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "restaurant_food",
-            joinColumns = @JoinColumn(name = "restaurant_id" , referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
-    List<Food> foods;
+    //This implementation will be used in the next feature
+//    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+//    @JoinTable(
+//            name = "restaurant_food",
+//            joinColumns = @JoinColumn(name = "restaurant_id" , referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
+//    List<Food> foods;
 
 }
