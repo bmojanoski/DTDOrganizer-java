@@ -1,12 +1,17 @@
 package com.example.dtdorganizer.controller;
 
 
+import com.example.dtdorganizer.exceptions.InvalidFoodNameAndPriceException;
+import com.example.dtdorganizer.exceptions.InvalidRestaurantIdException;
+import com.example.dtdorganizer.model.Food;
 import com.example.dtdorganizer.model.Order;
 import com.example.dtdorganizer.model.Restaurant;
+import com.example.dtdorganizer.service.FoodService;
 import com.example.dtdorganizer.service.OrderService;
 import com.example.dtdorganizer.service.RestaurantService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,38 +21,68 @@ import java.util.Optional;
 public class OrderController {
 
     private OrderService orderService;
+    private RestaurantService restaurantService;
+    private FoodService foodService;
 
-    public OrderController(OrderService orderService){
+    public OrderController(OrderService orderService,
+                           RestaurantService restaurantService,
+                           FoodService foodService) {
         this.orderService = orderService;
+        this.restaurantService = restaurantService;
+        this.foodService = foodService;
     }
 
     //get orders
     @GetMapping("/orders")
-    public List<Order> getAllOrders(){
+    public List<Order> getAllOrders() {
         return this.orderService.getAllFromToday();
     }
 
     //get orders by date
     @GetMapping("/orders/")
-    public List<Order> getTodayOrders(){
+    public List<Order> getTodayOrders() {
         return this.orderService.getAllOrders();
     }
 
     //get orders by id
     @GetMapping("/orders/{id}")
-    public Optional<Order> getOrderById(@PathVariable Long id){
+    public Optional<Order> getOrderById(@PathVariable Long id) {
         return this.orderService.getOrderById(id);
     }
+
     //save orders
     @PostMapping("/orders")
-    public Order createOrder(@RequestBody Order order){
-        return this.orderService.createOrder(order);
+    public Order createOrder(@RequestBody Order order) {
+
+        for (Food food : order.getFoods()) {
+            Optional<Food> findFood = this.foodService.findByNameAndPrice(food.getName(),food.getPrice());
+            if(!findFood.isPresent()){
+                this.foodService.createFood(food);
+            }
+        }
+
+        List<Food> foods = new ArrayList<Food>();
+        for (Food food : order.getFoods()) {
+            Food newFood = this.foodService.findByNameAndPrice(food.getName(),food.getPrice()).orElseThrow(InvalidFoodNameAndPriceException::new);
+            if(newFood != null)
+            foods.add(newFood);
+        }
+
+        Order newOrder = new Order();
+        Restaurant restaurant = this.restaurantService.findByName(order.getRestaurant().getName());
+        newOrder.setDate(order.date);
+        newOrder.setDescription(order.description);
+        newOrder.setPrice(order.price);
+        newOrder.setRestaurant(restaurant);
+        newOrder.setFoods(foods);
+
+        return this.orderService.createOrder(newOrder);
     }
     //update orders
 
     //delete orders
     @DeleteMapping("/orders/{id}")
-    public void deleteOrder(@PathVariable Long id){
+    public void deleteOrder(@PathVariable Long id) {
         this.orderService.deleteOrder(id);
     }
 

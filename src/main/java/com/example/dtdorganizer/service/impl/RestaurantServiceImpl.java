@@ -27,6 +27,11 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
+    public Restaurant findByName(String name) {
+        return this.restaurantRepository.findAllByName(name);
+    }
+
+    @Override
     public Restaurant createRestaurant(Restaurant restaurant) {
         return this.restaurantRepository.save(restaurant);
     }
