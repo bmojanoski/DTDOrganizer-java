@@ -23,7 +23,7 @@
  1. Сибнете ја апликацијата како .zip или [клонирајте](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) го проектот погоре
  2. Отворето го проектот локално во вашето IDE
  3. Во десниот горен дел во вашето IDE пишува имате вакво копче  ![enter image description here](https://i.ibb.co/jWJM5dj/2020-04-12-135059.png), стиснете на тоа копче и проектот ќе се стартува.
- 4. Потоа стартувајте го  проекот поставен на овој [линк](https://github.com/bmojanoski/DTDOrganizer-java) за да се приклучи и останатиот дел од апликацијата.
+ 4. Потоа стартувајте го  проекот поставен на овој [линк](https://github.com/bmojanoski/DTDOrganizer-frontend-react) за да се приклучи и останатиот дел од апликацијата.
 
 ## Функционалности
 1. **Организатор во вид на календар за конференциска сала, отсуство и
