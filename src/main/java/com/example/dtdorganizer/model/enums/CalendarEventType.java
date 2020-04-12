@@ -6,5 +6,5 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum CalendarEventType {
-    Other, Meeting, Birthday
+    Other, Meeting, Birthday, Room
 }

@@ -1,7 +1,6 @@
 package com.example.dtdorganizer.model;
 
 import com.example.dtdorganizer.model.enums.CalendarEventType;
-import com.example.dtdorganizer.model.enums.Color;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,9 +25,9 @@ public class Calendar {
 
     public String description;
 
-    public Color color;
+    public String color;
 
     public boolean allDay;
 
-        public CalendarEventType calendarEventType;
+    public CalendarEventType calendarEventType;
 }

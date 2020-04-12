@@ -39,6 +39,10 @@ public class CalendarServiceImpl implements CalendarService {
         event.setAllDay(calendar.allDay);
         event.setStart_date(calendar.start_date);
         event.setEnd_date(calendar.end_date);
+        event.setColor(calendar.color);
+        event.setDescription(calendar.description);
+        event.setCalendarEventType(calendar.calendarEventType);
+        event.setTitle(calendar.title);
         return this.calendarRepository.save(event);
     }
 
