@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class DocumentServiceImpl implements DocumentService {
 
-    private DocumentRepository documentRepository;
+    private final DocumentRepository documentRepository;
 
     public DocumentServiceImpl(DocumentRepository documentRepository){
         this.documentRepository = documentRepository;

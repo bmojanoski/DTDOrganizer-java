@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class CalendarServiceImpl implements CalendarService {
 
-    private CalendarRepository calendarRepository;
+    private final CalendarRepository calendarRepository;
 
     public CalendarServiceImpl(CalendarRepository calendarRepository){
         this.calendarRepository = calendarRepository;

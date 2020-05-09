@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class CalendarController {
 
-    private CalendarService calendarService;
+    private final CalendarService calendarService;
 
     public CalendarController(CalendarService calendarService){
         this.calendarService = calendarService;

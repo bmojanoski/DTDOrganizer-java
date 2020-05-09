@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 public class CourseServiceImpl implements CourseService {
 
-    private CourseRepository courseRepository;
+    private final CourseRepository courseRepository;
 
     public CourseServiceImpl(CourseRepository courseRepository){
         this.courseRepository = courseRepository;

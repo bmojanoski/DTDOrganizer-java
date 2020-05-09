@@ -14,8 +14,8 @@ import java.util.Optional;
 @Service
 public class FoodServiceImpl implements FoodService {
 
-    private FoodRepository foodRepository;
-    private FoodRepositoryCustom foodRepositoryCustom;
+    private final FoodRepository foodRepository;
+    private final FoodRepositoryCustom foodRepositoryCustom;
 
     public FoodServiceImpl(FoodRepository foodRepository,FoodRepositoryCustom foodRepositoryCustom){
         this.foodRepository = foodRepository;

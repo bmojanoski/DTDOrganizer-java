@@ -13,7 +13,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:3000")
 public class RestaurantController {
 
-    private  RestaurantService restaurantService;
+    private final RestaurantService restaurantService;
 
     public RestaurantController(RestaurantService restaurantService){
         this.restaurantService = restaurantService;

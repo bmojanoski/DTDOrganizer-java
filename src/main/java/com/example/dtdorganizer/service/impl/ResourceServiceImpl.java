@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class ResourceServiceImpl implements ResourceService {
 
-    private ResourceRepository resourceRepository;
+    private final ResourceRepository resourceRepository;
 
     public ResourceServiceImpl(ResourceRepository resourceRepository){
         this.resourceRepository = resourceRepository;

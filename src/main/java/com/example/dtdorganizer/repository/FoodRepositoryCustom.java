@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface FoodRepositoryCustom extends Repository<Food, Long> {
 
     @Query("SELECT f FROM Food f where f.name = :name AND f.price = :price")
-    public Optional<Food> findByNameAndPrice(@Param("name") String title,
-                                             @Param("price") int price);
+    Optional<Food> findByNameAndPrice(@Param("name") String title,
+                                      @Param("price") int price);
 }

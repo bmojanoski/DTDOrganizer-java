@@ -20,9 +20,9 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:3000")
 public class OrderController {
 
-    private OrderService orderService;
-    private RestaurantService restaurantService;
-    private FoodService foodService;
+    private final OrderService orderService;
+    private final RestaurantService restaurantService;
+    private final FoodService foodService;
 
     public OrderController(OrderService orderService,
                            RestaurantService restaurantService,

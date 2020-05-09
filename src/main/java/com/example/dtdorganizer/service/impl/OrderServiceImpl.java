@@ -16,9 +16,9 @@ import java.util.Optional;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-    private OrderRepository orderRepository;
-    private RestaurantRepository restaurantRepository;
-    private FoodRepository foodRepository;
+    private final OrderRepository orderRepository;
+    private final RestaurantRepository restaurantRepository;
+    private final FoodRepository foodRepository;
 
     public OrderServiceImpl(OrderRepository orderRepository,
                             RestaurantRepository restaurantRepository,

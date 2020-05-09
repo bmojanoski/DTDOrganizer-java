@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
 
-   private RestaurantRepository restaurantRepository;
+   private final RestaurantRepository restaurantRepository;
 
    public RestaurantServiceImpl(RestaurantRepository restaurantRepository){
        this.restaurantRepository = restaurantRepository;

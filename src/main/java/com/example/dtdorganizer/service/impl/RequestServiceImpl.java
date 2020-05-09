@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RequestServiceImpl implements RequestService {
 
-    private RequestRepository requestRepository;
+    private final RequestRepository requestRepository;
 
     public RequestServiceImpl(RequestRepository requestRepository){
         this.requestRepository = requestRepository;
