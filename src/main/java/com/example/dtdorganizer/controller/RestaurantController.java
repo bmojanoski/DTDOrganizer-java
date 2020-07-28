@@ -15,32 +15,27 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-    public RestaurantController(RestaurantService restaurantService){
+    public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
 
-    //get restaurants
     @GetMapping("/restaurants")
-    public List<Restaurant> getAllRestaurants(){
+    public List<Restaurant> getAllRestaurants() {
         return this.restaurantService.getAllRestaurants();
     }
 
-    //get restaurants by id
     @GetMapping("/restaurants/{id}")
-    public Optional<Restaurant> getRestaurantById(@PathVariable Long id){
+    public Optional<Restaurant> getRestaurantById(@PathVariable Long id) {
         return this.restaurantService.getRestaurantById(id);
     }
-    //save restaurants
+
     @PostMapping("/restaurants")
-    public Restaurant createRestaurant(@RequestBody Restaurant restaurant){
+    public Restaurant createRestaurant(@RequestBody Restaurant restaurant) {
         return this.restaurantService.createRestaurant(restaurant);
     }
-    //update restaurants
 
-    //delete restaurants
     @DeleteMapping("/restaurants/{id}")
-    public void deleteRestaurant(@PathVariable Long id){
+    public void deleteRestaurant(@PathVariable Long id) {
         this.restaurantService.deleteRestaurant(id);
     }
-
 }

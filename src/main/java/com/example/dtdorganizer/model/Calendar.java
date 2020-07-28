@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Calendar {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     public String title;

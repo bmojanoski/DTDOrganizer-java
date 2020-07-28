@@ -13,15 +13,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="books")
+@Table(name = "books")
 public class Book {
     @Id
     public String isbn;
     public String title;
 
 
-    @ElementCollection(targetClass=String.class)
-    @Column(name="authors")
+    @ElementCollection(targetClass = String.class)
+    @Column(name = "authors")
     private Collection<String> authors;
 
     public int pages;

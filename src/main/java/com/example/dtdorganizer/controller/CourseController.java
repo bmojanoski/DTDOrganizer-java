@@ -20,27 +20,23 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    //get Course
     @GetMapping("/courses")
-    public List<Course> getAllCourse(){
+    public List<Course> getAllCourse() {
         return this.courseService.getAllCourses();
     }
 
-    //get Course by id
     @GetMapping("/courses/{id}")
-    public Optional<Course> getCourseById(@PathVariable Long id){
+    public Optional<Course> getCourseById(@PathVariable Long id) {
         return this.courseService.getCourseById(id);
     }
-    //save Course
+
     @PostMapping("/courses")
-    public Course createCourse(@RequestBody Course course){
+    public Course createCourse(@RequestBody Course course) {
         return this.courseService.createCourse(course);
     }
-    //update Course
 
-    //delete Course
     @DeleteMapping("/courses/{id}")
-    public void deleteCourse(@PathVariable Long id){
+    public void deleteCourse(@PathVariable Long id) {
         this.courseService.deleteCourse(id);
     }
 

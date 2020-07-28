@@ -15,7 +15,7 @@ public class ResourceServiceImpl implements ResourceService {
 
     private final ResourceRepository resourceRepository;
 
-    public ResourceServiceImpl(ResourceRepository resourceRepository){
+    public ResourceServiceImpl(ResourceRepository resourceRepository) {
         this.resourceRepository = resourceRepository;
     }
 
@@ -63,7 +63,7 @@ public class ResourceServiceImpl implements ResourceService {
     @Override
     public void addRequest(Long id, Request request) {
         Resource resource1 = this.resourceRepository.findById(id).orElseThrow(InvalidResourceIdException::new);
-        if(request != null){
+        if (request != null) {
             resource1.getRequests().add(request);
             this.resourceRepository.save(resource1);
         }

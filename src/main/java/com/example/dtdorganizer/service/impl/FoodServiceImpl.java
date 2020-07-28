@@ -17,7 +17,7 @@ public class FoodServiceImpl implements FoodService {
     private final FoodRepository foodRepository;
     private final FoodRepositoryCustom foodRepositoryCustom;
 
-    public FoodServiceImpl(FoodRepository foodRepository,FoodRepositoryCustom foodRepositoryCustom){
+    public FoodServiceImpl(FoodRepository foodRepository, FoodRepositoryCustom foodRepositoryCustom) {
         this.foodRepository = foodRepository;
         this.foodRepositoryCustom = foodRepositoryCustom;
     }
@@ -34,7 +34,7 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public Optional<Food> findByNameAndPrice(String name, int price) {
-        return this.foodRepositoryCustom.findByNameAndPrice(name,price);
+        return this.foodRepositoryCustom.findByNameAndPrice(name, price);
     }
 
     @Override

@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class Request {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     public String request_name;

@@ -22,8 +22,7 @@ public class OrderServiceImpl implements OrderService {
 
     public OrderServiceImpl(OrderRepository orderRepository,
                             RestaurantRepository restaurantRepository,
-                            FoodRepository foodRepository)
-    {
+                            FoodRepository foodRepository) {
         this.orderRepository = orderRepository;
         this.restaurantRepository = restaurantRepository;
         this.foodRepository = foodRepository;

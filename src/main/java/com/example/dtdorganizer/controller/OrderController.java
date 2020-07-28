@@ -27,45 +27,46 @@ public class OrderController {
     public OrderController(OrderService orderService,
                            RestaurantService restaurantService,
                            FoodService foodService) {
+
         this.orderService = orderService;
         this.restaurantService = restaurantService;
         this.foodService = foodService;
     }
 
-    //get orders
+
     @GetMapping("/orders")
     public List<Order> getAllOrders() {
         return this.orderService.getAllFromToday();
     }
 
-    //get orders by date
+
     @GetMapping("/orders/")
     public List<Order> getTodayOrders() {
         return this.orderService.getAllOrders();
     }
 
-    //get orders by id
+
     @GetMapping("/orders/{id}")
     public Optional<Order> getOrderById(@PathVariable Long id) {
         return this.orderService.getOrderById(id);
     }
 
-    //save orders
+
     @PostMapping("/orders")
     public Order createOrder(@RequestBody Order order) {
 
         for (Food food : order.getFoods()) {
-            Optional<Food> findFood = this.foodService.findByNameAndPrice(food.getName(),food.getPrice());
-            if(!findFood.isPresent()){
+            Optional<Food> findFood = this.foodService.findByNameAndPrice(food.getName(), food.getPrice());
+            if (!findFood.isPresent()) {
                 this.foodService.createFood(food);
             }
         }
 
-        List<Food> foods = new ArrayList<Food>();
+        List<Food> foods = new ArrayList<>();
         for (Food food : order.getFoods()) {
-            Food newFood = this.foodService.findByNameAndPrice(food.getName(),food.getPrice()).orElseThrow(InvalidFoodNameAndPriceException::new);
-            if(newFood != null)
-            foods.add(newFood);
+            Food newFood = this.foodService.findByNameAndPrice(food.getName(), food.getPrice()).orElseThrow(InvalidFoodNameAndPriceException::new);
+            if (newFood != null)
+                foods.add(newFood);
         }
 
         Order newOrder = new Order();
@@ -78,9 +79,7 @@ public class OrderController {
 
         return this.orderService.createOrder(newOrder);
     }
-    //update orders
 
-    //delete orders
     @DeleteMapping("/orders/{id}")
     public void deleteOrder(@PathVariable Long id) {
         this.orderService.deleteOrder(id);

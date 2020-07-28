@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class Resource {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     public String name;
@@ -26,10 +26,10 @@ public class Resource {
     public ResourceType resourceType;
 
 
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "resource_request",
-            joinColumns = @JoinColumn(name = "resource_id" , referencedColumnName = "id"),
+            joinColumns = @JoinColumn(name = "resource_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "request_id", referencedColumnName = "id"))
     List<Request> requests;
 

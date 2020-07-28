@@ -20,28 +20,23 @@ public class UserController {
         this.userService = userService;
     }
 
-    //get users
     @GetMapping("/users")
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return this.userService.getAllUsers();
     }
 
-    //get user by id
     @GetMapping("/users/{id}")
-    public Optional<User> getUserById(@PathVariable Long Id){
-        return this.userService.getUserById(Id);
+    public Optional<User> getUserById(@PathVariable Long id) {
+        return this.userService.getUserById(id);
     }
-    //save user
+
     @PostMapping("/users")
-    public User createUser(@RequestBody User user){
+    public User createUser(@RequestBody User user) {
         return this.userService.createUser(user);
     }
-    //update user
 
-    //delete user
     @DeleteMapping("/users/{id}")
-    public void deleteUser(@PathVariable Long Id){
-        this.userService.deleteUser(Id);
+    public void deleteUser(@PathVariable Long id) {
+        this.userService.deleteUser(id);
     }
-
 }

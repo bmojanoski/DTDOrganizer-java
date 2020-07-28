@@ -13,7 +13,7 @@ public class DocumentServiceImpl implements DocumentService {
 
     private final DocumentRepository documentRepository;
 
-    public DocumentServiceImpl(DocumentRepository documentRepository){
+    public DocumentServiceImpl(DocumentRepository documentRepository) {
         this.documentRepository = documentRepository;
     }
 
@@ -24,7 +24,7 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public Optional<Document> getDocumentById(Long id) {
-        return  this.documentRepository.findById(id);
+        return this.documentRepository.findById(id);
     }
 
     @Override

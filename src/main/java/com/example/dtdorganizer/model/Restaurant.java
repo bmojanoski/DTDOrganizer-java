@@ -32,11 +32,11 @@ public class Restaurant {
     private List<Order> orderList;
 
     //This implementation will be used in the next feature
-//    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-//    @JoinTable(
-//            name = "restaurant_food",
-//            joinColumns = @JoinColumn(name = "restaurant_id" , referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
-//    List<Food> foods;
+    //    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    //    @JoinTable(
+    //            name = "restaurant_food",
+    //            joinColumns = @JoinColumn(name = "restaurant_id" , referencedColumnName = "id"),
+    //            inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
+    //    List<Food> foods;
 
 }

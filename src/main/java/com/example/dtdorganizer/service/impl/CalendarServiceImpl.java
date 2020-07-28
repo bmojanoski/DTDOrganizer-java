@@ -14,7 +14,7 @@ public class CalendarServiceImpl implements CalendarService {
 
     private final CalendarRepository calendarRepository;
 
-    public CalendarServiceImpl(CalendarRepository calendarRepository){
+    public CalendarServiceImpl(CalendarRepository calendarRepository) {
         this.calendarRepository = calendarRepository;
     }
 
@@ -35,7 +35,7 @@ public class CalendarServiceImpl implements CalendarService {
 
     @Override
     public Calendar updateEvent(Calendar calendar) {
-        Calendar event =this.calendarRepository.findById(calendar.id).orElseThrow(InvalidEventException::new);
+        Calendar event = this.calendarRepository.findById(calendar.id).orElseThrow(InvalidEventException::new);
         event.setAllDay(calendar.allDay);
         event.setStart_date(calendar.start_date);
         event.setEnd_date(calendar.end_date);

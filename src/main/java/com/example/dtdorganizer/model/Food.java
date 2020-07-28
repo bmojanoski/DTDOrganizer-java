@@ -25,9 +25,7 @@ public class Food {
     private List<Order> orders;
 
     //This implementation will be used in the next feature
-//    @JsonIgnore
-//    @ManyToMany(mappedBy = "foods", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    private List<Restaurant> restaurants;
-
-
+    //    @JsonIgnore
+    //    @ManyToMany(mappedBy = "foods", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //    private List<Restaurant> restaurants;
 }

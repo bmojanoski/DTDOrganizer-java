@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "order_table")
 public class Order {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     public int price;
@@ -26,14 +26,14 @@ public class Order {
     public String date;
 
     @ManyToOne
-    @JoinColumn(name="restaurant_id", nullable = false)
+    @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-    
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "order_food",
-            joinColumns = @JoinColumn(name = "order_id" , referencedColumnName = "id"),
+            joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "food_id", referencedColumnName = "id"))
     List<Food> foods;
 }

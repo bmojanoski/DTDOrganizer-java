@@ -15,7 +15,7 @@ public class CalendarController {
 
     private final CalendarService calendarService;
 
-    public CalendarController(CalendarService calendarService){
+    public CalendarController(CalendarService calendarService) {
         this.calendarService = calendarService;
     }
 
@@ -30,12 +30,12 @@ public class CalendarController {
     }
 
     @PutMapping("/calendar/{id}")
-    public Calendar updateEvent(@RequestBody Calendar event){
+    public Calendar updateEvent(@RequestBody Calendar event) {
         return this.calendarService.updateEvent(event);
     }
 
     @DeleteMapping("/calendar/{id}")
-    public void deleteEvent(@PathVariable Long id){
+    public void deleteEvent(@PathVariable Long id) {
         this.calendarService.deleteEvent(id);
     }
 

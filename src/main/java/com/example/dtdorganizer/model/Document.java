@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Document {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     public String document_name;

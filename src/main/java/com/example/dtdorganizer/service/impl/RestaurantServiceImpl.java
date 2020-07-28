@@ -7,14 +7,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
 
-   private final RestaurantRepository restaurantRepository;
+    private final RestaurantRepository restaurantRepository;
 
-   public RestaurantServiceImpl(RestaurantRepository restaurantRepository){
-       this.restaurantRepository = restaurantRepository;
-   }
+    public RestaurantServiceImpl(RestaurantRepository restaurantRepository) {
+        this.restaurantRepository = restaurantRepository;
+    }
 
     @Override
     public List<Restaurant> getAllRestaurants() {
@@ -43,6 +44,6 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public void deleteRestaurant(Long id) {
-            this.restaurantRepository.deleteById(id);
+        this.restaurantRepository.deleteById(id);
     }
 }

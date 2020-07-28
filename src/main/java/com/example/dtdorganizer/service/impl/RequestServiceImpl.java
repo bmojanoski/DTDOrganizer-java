@@ -10,7 +10,7 @@ public class RequestServiceImpl implements RequestService {
 
     private final RequestRepository requestRepository;
 
-    public RequestServiceImpl(RequestRepository requestRepository){
+    public RequestServiceImpl(RequestRepository requestRepository) {
         this.requestRepository = requestRepository;
     }
 

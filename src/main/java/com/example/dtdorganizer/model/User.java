@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class User {
 
     @javax.persistence.Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String firstName;
     private String lastName;
@@ -16,6 +16,7 @@ public class User {
     public User() {
         super();
     }
+
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;

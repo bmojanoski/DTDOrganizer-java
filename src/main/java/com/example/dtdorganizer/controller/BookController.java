@@ -18,28 +18,24 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    //get book
     @GetMapping("/books")
-    public List<Book> getAllBooks(){
+    public List<Book> getAllBooks() {
         return this.bookService.getAllBooks();
     }
 
-    //get book by id
     @GetMapping("/books/{id}")
-    public Optional<Book> getBookById(@PathVariable String id){
+    public Optional<Book> getBookById(@PathVariable String id) {
         return this.bookService.getBookById(id);
     }
-    //save book
+
     @PostMapping("/books")
-    public Book createBook(@RequestBody Book book){
+    public Book createBook(@RequestBody Book book) {
         return this.bookService.createBook(book);
     }
-    //update book
 
-    //delete book
     @DeleteMapping("/book/{id}")
-    public void deleteBook(@PathVariable String Id){
-        this.bookService.deleteBook(Id);
+    public void deleteBook(@PathVariable String id) {
+        this.bookService.deleteBook(id);
     }
 
 }
