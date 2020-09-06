@@ -2,6 +2,7 @@ package com.example.dtdorganizer.controller;
 
 import com.example.dtdorganizer.model.Book;
 import com.example.dtdorganizer.service.BookService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     @GetMapping("/books")
     public List<Book> getAllBooks() {
         return this.bookService.getAllBooks();
