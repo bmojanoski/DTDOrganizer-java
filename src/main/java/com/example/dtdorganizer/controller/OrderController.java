@@ -72,6 +72,7 @@ public class OrderController {
         Order newOrder = new Order();
         Restaurant restaurant = this.restaurantService.findByName(order.getRestaurant().getName());
         newOrder.setDate(order.date);
+        newOrder.setEmployee(order.employee);
         newOrder.setDescription(order.description);
         newOrder.setPrice(order.price);
         newOrder.setRestaurant(restaurant);

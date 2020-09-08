@@ -25,6 +25,8 @@ public class Order {
 
     public String date;
 
+    public String employee;
+
     @ManyToOne
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
