@@ -9,8 +9,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ResourceDTO {
+public class RequestDTO {
+    Long id;
     public String request_name;
-    public Long user_id;
-    public List<Long> id;
+    public String user_name;
+    public List<Resource> resources;
 }

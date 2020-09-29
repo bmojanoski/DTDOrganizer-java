@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @AllArgsConstructor
@@ -18,6 +19,9 @@ public class Request {
     Long id;
 
     public String request_name;
+
+    public String user_name;
+
     @JsonIgnore
     @ManyToMany(mappedBy = "requests", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Resource> resources;
